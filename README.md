@@ -11,17 +11,18 @@ This project is provided solely for the author's personal use. You may clone or 
 - [SukkaW/Surge](https://github.com/SukkaW/Surge) (AGPL-3.0; `List/ip/china_ip.conf` _excluded_: CC BY-SA 2.0)
 - [SukkaLab/ruleset.skk.moe](https://github.com/SukkaLab/ruleset.skk.moe) (AGPL-3.0)
 - [CaptainGod/sing-box-rule-set-transform](https://github.com/CaptainGod/sing-box-rule-set-transform)
+- [SagerNet/srsc](https://github.com/SagerNet/srsc) (GPL-3.0)
 
 ## License
 
-1. This project is distributed under the [AGPL-3.0](LICENSE) license by [@yishanujedog](https://github.com/yishanujedog). All derivative works shall be subject to the same license.
-2. This project incorporates code licensed under AGPL-3.0 or CC BY-SA 2.0 from [@SukkaW](https://github.com/SukkaW), with all rights thereto reserved by [@SukkaW](https://github.com/SukkaW), and the definitive source for verification remains [ruleset.skk.moe](https://ruleset.skk.moe). Use of such incorporated or referenced code is governed by the terms of the respective license under which it is made available.
+1. This project is distributed under the [AGPL-3.0](LICENSE) license. All derivative works shall be subject to the same license.
+2. This project incorporates or references code licensed under AGPL-3.0, CC BY-SA 2.0 or GPL-3.0. Use of such incorporated or referenced code is governed by the terms of the respective license under which it is made available.
 3. The submission, inclusion, or listing of this project in lists, collections, rankings, or analogous compilations is expressly prohibited without the prior written consent of the author.
 
 ```md
 Copyright (C) 2025 yishanujedog
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, version 3 of the License.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
