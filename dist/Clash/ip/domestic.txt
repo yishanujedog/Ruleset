@@ -1,6 +1,6 @@
 #########################################
 # Sukka's Ruleset - Mainland China Supplement CIDR
-# Last Updated: 2026-01-15T13:04:17.268Z
+# Last Updated: 2026-01-16T01:43:03.543Z
 # Size: 3
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe

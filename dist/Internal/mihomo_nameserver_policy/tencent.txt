@@ -1,6 +1,6 @@
 #########################################
 # Sukka's Ruleset - Local DNS Mapping for Mihomo NameServer Policy (TENCENT)
-# Last Updated: 2026-01-15T13:04:17.325Z
+# Last Updated: 2026-01-16T01:43:03.606Z
 # Size: 49
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe

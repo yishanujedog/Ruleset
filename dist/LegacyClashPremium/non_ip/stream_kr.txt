@@ -1,6 +1,6 @@
 #########################################
 # Sukka's Ruleset - Stream Services: Korean
-# Last Updated: 2026-01-15T13:04:17.068Z
+# Last Updated: 2026-01-16T01:43:03.335Z
 # Size: 3
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
