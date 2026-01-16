@@ -1,0 +1,3 @@
+[submodule "srsc"]
+	path = srsc
+	url = https://github.com/yishanujedog/sing-rule.git

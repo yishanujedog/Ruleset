@@ -1,0 +1,129 @@
+name: Compile sing-box
+on:
+  workflow_run:
+    workflows: ["Compile Ruleset"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  SING_BOX_PACKAGE: linux-amd64
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: version
+        shell: bash
+        run: |
+          version=$(curl -sL https://api.github.com/repos/SagerNet/sing-box/releases | jq -r '.[0].tag_name[1:]')
+          echo "version=$version" >> $GITHUB_OUTPUT
+      - shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: "pip"
+      - uses: actions/setup-go@v6
+        with:
+          go-version: ^1.24
+      - shell: bash
+        run: |
+          python -Im pip install --upgrade pip
+          python -Im pip install --requirement requirements.txt
+      - shell: bash
+        run: |
+          workdir="$(mktemp -d)"
+          trap 'rm -rf "$workdir"' EXIT
+          archive="sing-box-${{ steps.version.outputs.version }}-${{ env.SING_BOX_PACKAGE }}.tar.gz"
+          uri="https://github.com/SagerNet/sing-box/releases/download/v${{ steps.version.outputs.version }}/${archive}"
+          curl --fail --location --retry 5 --retry-delay 5 --retry-all-errors -o "$workdir/pkg.tgz" "$uri"
+          tar -xzf "$workdir/pkg.tgz" -C "$workdir"
+          sudo install -m 0755 "$workdir/sing-box-${{ steps.version.outputs.version }}-${{ env.SING_BOX_PACKAGE }}/sing-box" /usr/local/bin/sing-box
+          sing-box version
+      - shell: bash
+        run: |
+          if [ ! -d "srsc" ]; then
+            git submodule add https://github.com/yishanujedog/sing-rule.git srsc
+          fi
+          git submodule update --init --recursive srsc
+          cd srsc
+          go clean -modcache
+          go get github.com/sagernet/sing-box@v${{ steps.version.outputs.version }}
+          go mod tidy
+          go build -o srsc ./cmd/srsc
+          cd ..
+      - shell: bash
+        run: |
+          python main.py
+      - shell: bash
+        run: |
+          cd sing-box
+          shopt -s nullglob
+          for category in domainset ip non_ip dns; do
+            json_path="json/$category"
+            srs_path="srs/$category"
+            [ -d "$json_path" ] || continue
+            mkdir -p "$srs_path"
+            while IFS= read -r -d '' src; do
+              base="$(basename "${src%.json}")"
+              sing-box rule-set compile --output "$srs_path/${base}.srs" "$src"
+            done < <(find "$json_path" -type f -name '*.json' -print0)
+          done
+      - shell: bash
+        run: |
+          ./srsc/srsc run -c srsc.json &
+          sleep 5
+          curl -s http://127.0.0.1:8080/Sukka/domainset/reject/source || (exit 1)
+      - shell: bash
+        run: |
+          mkdir -p sing-box/srsc/{source,binary}/{domainset,ip,non_ip,dns}
+
+          for category in domainset non_ip; do
+            for file in dist/Clash/$category/*.txt; do
+              [ -f "$file" ] || continue
+              name="$(basename "$file" .txt | sed 's/_/-/g')"
+              api_name="$(echo "$name" | sed 's/-/_/g')"
+              curl -s "http://127.0.0.1:8080/Sukka/$category/$api_name/source" > "sing-box/srsc/source/$category/$name.$category.json"
+              curl -s "http://127.0.0.1:8080/Sukka/$category/$api_name/binary" > "sing-box/srsc/binary/$category/$name.$category.srs"
+            done
+          done
+
+          for file in dist/Clash/ip/*.txt; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file" .txt | sed 's/_/-/g')"
+            api_name="$(echo "$name" | sed 's/-/_/g')"
+            case "$name" in
+              china-ip) api_path="china_ip" ;;
+              china-ip-ipv6) api_path="china_ip_ipv6" ;;
+              *) api_path="$api_name" ;;
+            esac
+            curl -s "http://127.0.0.1:8080/Sukka/ip/$api_path/source" > "sing-box/srsc/source/ip/$name.ip.json"
+            curl -s "http://127.0.0.1:8080/Sukka/ip/$api_path/binary" > "sing-box/srsc/binary/ip/$name.ip.srs"
+          done
+
+          for file in dist/Internal/mihomo_nameserver_policy/*.txt; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file" .txt | sed 's/_/-/g')"
+            api_name="$(echo "$name" | sed 's/-/_/g')"
+            curl -s "http://127.0.0.1:8080/Sukka/dns/$api_name/source" > "sing-box/srsc/source/dns/$name.dns.json"
+            curl -s "http://127.0.0.1:8080/Sukka/dns/$api_name/binary" > "sing-box/srsc/binary/dns/$name.dns.srs"
+          done
+      - shell: bash
+        run: |
+          pkill -f "srsc run" || true
+      - shell: bash
+        run: |-
+          if [[ -n "$(git status --porcelain sing-box)" ]]; then
+            git add sing-box
+            git stash push --keep-index
+            git commit -m "feat(sing-box): bump [$(date -u +%FT%TZ)]"
+            git pull --rebase origin main
+            git stash pop || true
+            git push
+          fi
