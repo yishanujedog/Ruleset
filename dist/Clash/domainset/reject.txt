@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - Reject Base
-# Last Updated: 2026-01-16T10:48:47.828Z
-# Size: 90922
+# Last Updated: 2026-01-16T12:31:12.693Z
+# Size: 90960
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -410,6 +410,7 @@
 +.jzruvlfvoawfg.website
 +.jvzsgtjkewhfu.website
 +.jsnooznxsbjxk.website
++.jrqzmiipckcvm.website
 +.jrnjcrgmiyzty.website
 +.jqwnvfjfqkfry.website
 +.jqpaisehvpnvp.website
@@ -422,6 +423,7 @@
 +.jdtqbvirzetyc.website
 +.jdropaegdvook.website
 +.jbuegeejecfca.website
++.jayqbgfkdypmw.website
 +.jangmglkchtgl.website
 +.izkuyzehwunrc.website
 +.izjvndjendqdv.website
@@ -493,6 +495,7 @@
 +.frnaqbeavtdvm.website
 +.fqzouodvgiqub.website
 +.fqzjprfzxplwo.website
++.fqfuegxuujfzs.website
 +.fofauctddfpfo.website
 +.fnusclbdlbrcm.website
 +.fmpezkwxyqryq.website
@@ -793,6 +796,7 @@
 +.zzvuvnvgfamfy.online
 +.zylbpczlvqaqp.online
 +.zyhzzxcwgqwtx.online
++.ztfsuttwsccok.online
 +.zqxuemmabklqq.online
 +.zqaujzsxkazrn.online
 +.zpveapgfsqcty.online
@@ -1109,6 +1113,7 @@
 +.lofcdljzqswbs.online
 +.lmwxayvahjjuw.online
 +.lkcfyglveryvl.online
++.ljiotibrwigir.online
 +.rt.livelifefuuly.online
 +.lisnkphenonfq.online
 +.lhyfewqwlxbil.online
@@ -1356,6 +1361,7 @@
 +.api.alextrader.online
 +.pl.weinshops.online
 +.tr.superporn.online
++.report.starshort.online
 +.ref.sologomme.online
 +.bolha.shopzinho.online
 +.sagewwll4.online
@@ -1720,6 +1726,7 @@ crsoptimizer.conversionrate.store
 +.warumbistdusoarm.space
 +.hoplekhornnist.space
 +.zzpgiredutflq.space
++.zzmqptxatuosm.space
 +.zyiaxyfrbehub.space
 +.zopowwzvfnvba.space
 +.zogmfiyljbdvf.space
@@ -1995,6 +2002,7 @@ crsoptimizer.conversionrate.store
 +.lpwtbsfgamivm.space
 +.lpklqoaezptbr.space
 +.lpcqyjyhfhets.space
++.lmapbcyewdaog.space
 +.llxemmopmuitk.space
 +.llegguiitcmqo.space
 +.limolktmivoaq.space
@@ -4566,6 +4574,7 @@ bad.third-party.site
 +.coziegosmore.qpon
 +.councilopahs.qpon
 +.coochesvifda.qpon
++.contecandite.qpon
 +.chaletrobber.qpon
 +.captionreuel.qpon
 +.cabberbowess.qpon
@@ -4583,6 +4592,7 @@ bad.third-party.site
 +.wooablelakh.qpon
 +.wingmistico.qpon
 +.waikjudgers.qpon
++.violistexla.qpon
 +.tiamcolumba.qpon
 +.tengbluffer.qpon
 +.syceedepend.qpon
@@ -5456,6 +5466,7 @@ nmbr.info
 +.fribbledolentedendral.cyou
 +.evangelunloathchedite.cyou
 +.damsonsencreelquotity.cyou
++.dammarsaroeirawoodrow.cyou
 +.chaferygulliessenones.cyou
 +.bewreakaglossaberchta.cyou
 +.aroliumgreyinggumweed.cyou
@@ -5642,6 +5653,7 @@ nmbr.info
 +.glozingweakweeze.cyou
 +.funiccoypousumen.cyou
 +.flneureditcliack.cyou
++.felidturusledges.cyou
 +.drippervolslapon.cyou
 +.dorhawkunamoerth.cyou
 +.dioneginzotosily.cyou
@@ -5763,6 +5775,7 @@ nmbr.info
 +.wipeoutmoraea.cyou
 +.wheezesarmure.cyou
 +.whatsisageing.cyou
++.urluchdisyoke.cyou
 +.upttorevirify.cyou
 +.unknowgranose.cyou
 +.ulnariaempire.cyou
@@ -5823,6 +5836,7 @@ nmbr.info
 +.facundproduct.cyou
 +.enodateenglue.cyou
 +.durenepoddies.cyou
++.dragnetguardo.cyou
 +.dorismglutter.cyou
 +.ditchedtmeses.cyou
 +.dindleapargia.cyou
@@ -5955,6 +5969,7 @@ nmbr.info
 +.poleychoirs.cyou
 +.pinfoldvugh.cyou
 +.pimplaroyal.cyou
++.paxescroons.cyou
 +.pauxistores.cyou
 +.pachtocelli.cyou
 +.norkshinkin.cyou
@@ -6013,6 +6028,7 @@ nmbr.info
 +.serfrizzle.cyou
 +.sargegamma.cyou
 +.rockhassar.cyou
++.rejectdrey.cyou
 +.pmkhoopoos.cyou
 +.oselaetuis.cyou
 +.oppzareeba.cyou
@@ -6310,6 +6326,7 @@ grs.dbankcloud.asia
 +.kmcqtctrocnqipe.xyz
 +.kjfhtsgdnolcptg.xyz
 +.kjagneufhssliaq.xyz
++.jvfsxandunqwpma.xyz
 +.jdgcolcjnqftxow.xyz
 +.hfyjykludniuboi.xyz
 +.gociejpxtkkspov.xyz
@@ -8152,6 +8169,7 @@ collect.foresightnews.pro
 +.sticky-luck.pro
 +.sportstoday.pro
 +.somber-fold.pro
++.smooth-chip.pro
 +.putrid-game.pro
 +.proeroclips.pro
 +.prettyfruit.pro
@@ -8265,6 +8283,7 @@ collect.foresightnews.pro
 +.share.blindside.pro
 +.all-essay.pro
 +.wp3qhtu5.pro
++.weaklady.pro
 +.vodobyve.pro
 +.tr.news.teklifim.pro
 +.serv1for.pro
@@ -14435,6 +14454,7 @@ smplnltcs.knip.dev
 +.installationtruckuseful.com
 +.insightspendadvancement.com
 +.secure.innovation-perceptive52.com
++.ingratitudealienatedues.com
 +.pages.informafoodservicemedia.com
 +.inestimablereddencloset.com
 +.increasingcustomers-tag.com
@@ -16452,6 +16472,7 @@ samsungcloudsolution.com
 +.comfortableexercise.com
 +.comeeasiestshepherd.com
 +.columnspastrybonnet.com
++.collationuppermodel.com
 +.vfljt.coffeeandmotivation.com
 +.stape.codigosdeabundancia.com
 +.cobwebcomprehension.com
@@ -17252,6 +17273,7 @@ analytics.immersivetranslate.com
 +.api.diplomadointercept.com
 +.dinosaurprinciples.com
 +.diningprefixmyself.com
++.usage.digitalconcerthall.com
 +.difficultywithhold.com
 +.internalt.dieselequipmentinc.com
 +.inqjal.dickssportinggoods.com
@@ -18273,6 +18295,7 @@ analytics.immersivetranslate.com
 +.marketing.explorecharleston.com
 +.marketing.experienceolympia.com
 +.expensivelikeness.com
++.expensiveincident.com
 +.existencepawstest.com
 +.lpnmb.evolutionofsmooth.com
 +.axp.everythinglubbock.com
@@ -20680,6 +20703,7 @@ display.360totalsecurity.com
 +.go-dev.qantaswellbeing.com
 +.go.qantaswellbeing.com
 +.pybwjcqubnxxpms.com
++.pursuedcovering.com
 +.purifydimeprove.com
 +.octopus2.puregoldprotein.com
 +.marketing.pureaircontrols.com
@@ -21042,6 +21066,7 @@ display.360totalsecurity.com
 +.scgou.littlepassports.com
 +.mr-in.littlepassports.com
 +.littlecutelions.com
++.literacyfigured.com
 +.ferret.linksoftwarellc.com
 +.linkedkneebrisk.com
 +.ssgtm.lightingnewyork.com
@@ -23092,6 +23117,7 @@ display.360totalsecurity.com
 +.t-s.lyticportfolio.com
 +.lynmajydqmqvqt.com
 +.lycopusunsteck.com
++.luqodlanshorqg.com
 +.luminosoocchio.com
 +.resources.lumestrategies.com
 +.qeigr.luluandgeorgia.com
@@ -23259,6 +23285,7 @@ display.360totalsecurity.com
 +.tr.ispaconsulting.com
 +.isabellaentire.com
 +.iridescentdusk.com
++.ipmwfqewhylbxm.com
 +.app.learn.ioninteractive.com
 +.metrics.investmentnews.com
 +.inventorycache.com
@@ -24589,6 +24616,7 @@ httpdns.volcengineapi.com
 +.upbindsswythe.com
 +.a8.uokura-hakata.com
 +.unwritmirific.com
++.unwelcometown.com
 +.untiingterton.com
 +.untackreviler.com
 +.unspedtaction.com
@@ -25207,6 +25235,7 @@ qm.redbullracing.com
 +.qualifiedblog.com
 +.welcome.qualicoliving.com
 +.eloqua.quadrotech-it.com
++.qrylonbsuddkh.com
 +.qrwyjerppmvse.com
 +.qr-player-new.com
 +.qqosk05041llo.com
@@ -33249,6 +33278,7 @@ d1.speedvitals.com
 +.jifjai.instamotion.com
 +.t.instadoodle.com
 +.link.instabridge.com
++.inspiredamy.com
 +.inspirebees.com
 +.research.insidesales.com
 +.inputicicle.com
@@ -36597,6 +36627,7 @@ ads-shopping.shouqianba.com
 +.peskycrash.com
 +.info.personable.com
 +.sinrf.permablend.com
++.perkymodel.com
 +.info.perceptics.com
 +.hpomp.pepperpong.com
 +.penxiangge.com
@@ -36852,6 +36883,7 @@ httpdns.push.oppomobile.com
 +.zzuml.nordicware.com
 +.jzgfhr.nordicnest.com
 +.ss.nopanordic.com
++.noopoacoud.com
 +.y4e04gql5o1b.www.nookgaming.com
 +.ztqid.nonomobaby.com
 +.gtm.noidinotte.com
@@ -40402,6 +40434,7 @@ httpdns.yunxindns.com
 +.yami8alea.com
 +.yama1hove.com
 +.a8.yakumatch.com
++.yakhaknog.com
 +.y7pcgacfn.com
 +.y6oiuyphb.com
 +.y63eay93i.com
@@ -57155,6 +57188,7 @@ mydisplay.ctfile.com
 +.pages.cobweb.com
 +.ae.cobweb.com
 +.ggduev.cobone.com
++.cnstrc.com
 +.marketinginfo.clutch.com
 +.analytics.clubic.com
 +.clrstm.com
@@ -62871,6 +62905,7 @@ acs.56.com
 +.545xnv7vpyxmg5lqvzx4unqut938.cfd
 +.2ytit6fyob6nfboi4qjllztvjicc.cfd
 +.x3tbvhxtbioxbio5gh435lj9h48.cfd
++.oyfmpnme8ukomkzumm1e1fymyf3.cfd
 +.jnjoyfb2b2f5cecrbuozpo8ug5u.cfd
 +.hfh8qj1gyti7crquqqgimowvwlp.cfd
 +.84eeog5cl7cqf8fjo8cgcpyu67g.cfd
@@ -63395,6 +63430,7 @@ acs.56.com
 +.tibialelegist.cfd
 +.tevissloosely.cfd
 +.terminipigful.cfd
++.supineshaunty.cfd
 +.suaharotriduo.cfd
 +.stoopedbedaub.cfd
 +.stitchatingle.cfd
@@ -63569,6 +63605,7 @@ acs.56.com
 +.fatuoidbrisa.cfd
 +.farsibagoong.cfd
 +.exudeflogger.cfd
++.emulsickesar.cfd
 +.duenascorser.cfd
 +.drifterunken.cfd
 +.dosaingreeks.cfd
@@ -63595,6 +63632,7 @@ acs.56.com
 +.afoamptereal.cfd
 +.zebubesting.cfd
 +.zaffirbowly.cfd
++.wauratrouss.cfd
 +.vizoruntuck.cfd
 +.versorabave.cfd
 +.vamoosebuns.cfd
