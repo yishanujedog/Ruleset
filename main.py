@@ -274,7 +274,11 @@ async def prefix(asn: str) -> list[str]:  # noqa: D103
         ),
         (
             f"https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS{asn_id}",
-            lambda body: [item["prefix"] for item in body.get("data", {}).get("prefixes", ()) if "prefix" in item],
+            lambda body: [
+                item["prefix"]
+                for item in body.get("data", {}).get("prefixes", ())
+                if "prefix" in item
+            ],
         ),
     ]
 
@@ -317,7 +321,9 @@ def decode_yaml(blob: str) -> list[dict[str, str]]:  # noqa: D103
             )
             if "," not in item
             else item.split(",", 2)[0].strip(),
-            "address": ((entry := entry[1:].lstrip(".")) if entry.startswith("+") else entry)
+            "address": (
+                (entry := entry[1:].lstrip(".")) if entry.startswith("+") else entry
+            )
             if "," not in item
             else item.split(",", 2)[1].strip(),
         }
@@ -326,7 +332,11 @@ def decode_yaml(blob: str) -> list[dict[str, str]]:  # noqa: D103
 
 
 def decode_list(blob: str) -> list[dict[str, str]]:  # noqa: D103
-    lines = (line.strip() for line in blob.strip().split("\n") if line and not line.startswith("#"))
+    lines = (
+        line.strip()
+        for line in blob.strip().split("\n")
+        if line and not line.startswith("#")
+    )
 
     return [
         (
@@ -368,7 +378,9 @@ async def merge(asn_list: list[str]) -> list[str]:  # noqa: D103
         return_exceptions=True,
     )
     return list(
-        itertools.chain.from_iterable(bundle for bundle in bundles if isinstance(bundle, list)),
+        itertools.chain.from_iterable(
+            bundle for bundle in bundles if isinstance(bundle, list)
+        ),
     )
 
 
@@ -415,7 +427,9 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
         if not addresses:
             return [], []
 
-        port_results = [(split_port(item)[0], split_port(item)[1]) for item in addresses]
+        port_results = [
+            (split_port(item)[0], split_port(item)[1]) for item in addresses
+        ]
         filtered_results = [
             (None, span) if span is not None else (value, None)
             for span, value in port_results
@@ -448,17 +462,23 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                     regular_rule.setdefault("domain_regex", []).extend(valid_regexes)
             case "domain_wildcard":
                 regex_patterns = [
-                    mask_regex(item) for item in addresses if (regex := mask_regex(item)) and validate_regex(regex)
+                    mask_regex(item)
+                    for item in addresses
+                    if (regex := mask_regex(item)) and validate_regex(regex)
                 ]
                 if regex_patterns:
                     regular_rule.setdefault("domain_regex", []).extend(regex_patterns)
             case "ip_cidr":
                 regular_rule.setdefault("ip_cidr", []).extend(
-                    normalize_cidr(addr.rsplit(",", 1)[0]) if addr.endswith(",no-resolve") else normalize_cidr(addr)
+                    normalize_cidr(addr.rsplit(",", 1)[0])
+                    if addr.endswith(",no-resolve")
+                    else normalize_cidr(addr)
                     for addr in addresses
                 )
             case "source_ip_cidr":
-                regular_rule.setdefault("source_ip_cidr", []).extend(normalize_cidr(item) for item in addresses)
+                regular_rule.setdefault("source_ip_cidr", []).extend(
+                    normalize_cidr(item) for item in addresses
+                )
             case "port" | "source_port":
                 ports, ranges = _process_ports(addresses)
                 field_prefix = "" if pattern == "port" else "source_"
@@ -473,12 +493,18 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
             case "process_path":
                 regular_rule.setdefault("process_path", []).extend(addresses)
             case "network":
-                proto = [entry.lower() for entry in addresses if entry.upper() in {"TCP", "UDP", "ICMP"}]
+                proto = [
+                    entry.lower()
+                    for entry in addresses
+                    if entry.upper() in {"TCP", "UDP", "ICMP"}
+                ]
                 if proto:
                     regular_rule.setdefault("network", []).extend(proto)
             case "protocol":
                 supported_protocols = [
-                    entry.lower() for entry in addresses if entry.upper() in {"TLS", "HTTP", "QUIC", "STUN"}
+                    entry.lower()
+                    for entry in addresses
+                    if entry.upper() in {"TLS", "HTTP", "QUIC", "STUN"}
                 ]
                 if supported_protocols:
                     regular_rule.setdefault("protocol", []).extend(supported_protocols)
@@ -495,24 +521,36 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
             case "user":
                 regular_rule.setdefault("user", []).extend(addresses)
             case "user_id":
-                user_ids = [int(user_id_str) for user_id_str in addresses if user_id_str.isdigit()]
+                user_ids = [
+                    int(user_id_str)
+                    for user_id_str in addresses
+                    if user_id_str.isdigit()
+                ]
                 if user_ids:
                     regular_rule.setdefault("user_id", []).extend(user_ids)
             case "clash_mode":
                 if addresses:
-                    regular_rule["clash_mode"] = addresses[0]  # Only one clash_mode allowed
+                    regular_rule["clash_mode"] = addresses[
+                        0
+                    ]  # Only one clash_mode allowed
             case "network_type":
                 network_types = [
-                    entry.lower() for entry in addresses if entry.lower() in {"wifi", "cellular", "ethernet", "other"}
+                    entry.lower()
+                    for entry in addresses
+                    if entry.lower() in {"wifi", "cellular", "ethernet", "other"}
                 ]
                 if network_types:
                     regular_rule.setdefault("network_type", []).extend(network_types)
             case "network_is_expensive":
                 if addresses:
-                    regular_rule["network_is_expensive"] = addresses[0].lower() == "true"
+                    regular_rule["network_is_expensive"] = (
+                        addresses[0].lower() == "true"
+                    )
             case "network_is_constrained":
                 if addresses:
-                    regular_rule["network_is_constrained"] = addresses[0].lower() == "true"
+                    regular_rule["network_is_constrained"] = (
+                        addresses[0].lower() == "true"
+                    )
             case "wifi_ssid":
                 regular_rule.setdefault("wifi_ssid", []).extend(addresses)
             case "wifi_bssid":
@@ -546,7 +584,9 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                     regular_rule["ip_is_private"] = addresses[0].lower() == "true"
             case "source_ip_is_private":
                 if addresses:
-                    regular_rule["source_ip_is_private"] = addresses[0].lower() == "true"
+                    regular_rule["source_ip_is_private"] = (
+                        addresses[0].lower() == "true"
+                    )
             case "and" | "or":
                 for addr in addresses:
                     if addr.startswith("((") and addr.endswith("))"):
@@ -567,7 +607,9 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                     *rule_parts[1:-1],
                                     rule_parts[-1][:-1],
                                 ]
-                                if rule_parts and rule_parts[0].startswith("(") and rule_parts[-1].endswith(")")
+                                if rule_parts
+                                and rule_parts[0].startswith("(")
+                                and rule_parts[-1].endswith(")")
                                 else rule_parts
                             )
                             if "),(" in inner_content or "), (" in inner_content
@@ -580,7 +622,10 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                             if "," in stripped_rule:
                                 parts = stripped_rule.split(",", 1)
                                 if len(parts) == 2:  # noqa: PLR2004
-                                    sub_pattern, address = parts[0].strip(), parts[1].strip()
+                                    sub_pattern, address = (
+                                        parts[0].strip(),
+                                        parts[1].strip(),
+                                    )
 
                                     sub_rule = (
                                         {
@@ -601,13 +646,20 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                         if sub_pattern == "NETWORK"
                                         else (
                                             {"protocol": [address.lower()]}
-                                            if address.upper() in {"TLS", "HTTP", "QUIC", "STUN"}
+                                            if address.upper()
+                                            in {"TLS", "HTTP", "QUIC", "STUN"}
                                             else {}
                                         )
                                         if sub_pattern == "PROTOCOL"
                                         else (
                                             {"client": [address.lower()]}
-                                            if address.upper() in {"CHROMIUM", "SAFARI", "FIREFOX", "QUIC-GO"}
+                                            if address.upper()
+                                            in {
+                                                "CHROMIUM",
+                                                "SAFARI",
+                                                "FIREFOX",
+                                                "QUIC-GO",
+                                            }
                                             else {}
                                         )
                                         if sub_pattern == "CLIENT"
@@ -619,23 +671,44 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                             "process_path": [address],
                                         }
                                         if sub_pattern == "PROCESS-PATH"
-                                        else ({"process_path_regex": [address]} if validate_regex(address) else {})
+                                        else (
+                                            {"process_path_regex": [address]}
+                                            if validate_regex(address)
+                                            else {}
+                                        )
                                         if sub_pattern == "PROCESS-PATH-REGEX"
-                                        else ({"process_name_regex": [address]} if validate_regex(address) else {})
+                                        else (
+                                            {"process_name_regex": [address]}
+                                            if validate_regex(address)
+                                            else {}
+                                        )
                                         if sub_pattern == "PROCESS-NAME-REGEX"
                                         else {
                                             "source_ip_cidr": [normalize_cidr(address)],
                                         }
                                         if sub_pattern in {"SRC-IP", "SRC-IP-CIDR"}
-                                        else ({"port": [int(address)]} if address.isdigit() else {})
-                                        if sub_pattern in {"DEST-PORT", "DST-PORT", "PORT"}
-                                        else ({"source_port": [int(address)]} if address.isdigit() else {})
+                                        else (
+                                            {"port": [int(address)]}
+                                            if address.isdigit()
+                                            else {}
+                                        )
+                                        if sub_pattern
+                                        in {"DEST-PORT", "DST-PORT", "PORT"}
+                                        else (
+                                            {"source_port": [int(address)]}
+                                            if address.isdigit()
+                                            else {}
+                                        )
                                         if sub_pattern == "SRC-PORT"
                                         else {
                                             "ip_cidr": [normalize_cidr(address)],
                                         }
                                         if sub_pattern == "IP-CIDR"
-                                        else ({"domain_regex": [address]} if validate_regex(address) else {})
+                                        else (
+                                            {"domain_regex": [address]}
+                                            if validate_regex(address)
+                                            else {}
+                                        )
                                         if sub_pattern == "DOMAIN-REGEX"
                                         else (
                                             {"domain_regex": [mask_regex(address)]}
@@ -647,7 +720,11 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                             "user": [address],
                                         }
                                         if sub_pattern == "USER"
-                                        else ({"user_id": [int(address)]} if address.isdigit() else {})
+                                        else (
+                                            {"user_id": [int(address)]}
+                                            if address.isdigit()
+                                            else {}
+                                        )
                                         if sub_pattern == "USER-ID"
                                         else {
                                             "package_name": [address],
@@ -659,7 +736,8 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                         if sub_pattern == "AUTH-USER"
                                         else (
                                             {"network_type": [address.lower()]}
-                                            if address.lower() in {"wifi", "cellular", "ethernet", "other"}
+                                            if address.lower()
+                                            in {"wifi", "cellular", "ethernet", "other"}
                                             else {}
                                         )
                                         if sub_pattern == "NETWORK-TYPE"
@@ -677,7 +755,8 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                         if sub_pattern == "RULE-SET"
                                         else (
                                             {"ip_version": [int(address)]}
-                                            if address.isdigit() and int(address) in {4, 6}
+                                            if address.isdigit()
+                                            and int(address) in {4, 6}
                                             else {}
                                         )
                                         if sub_pattern == "IP-VERSION"
@@ -690,7 +769,8 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                                         }
                                         if sub_pattern == "IP-IS-PRIVATE"
                                         else {
-                                            "source_ip_is_private": address.lower() == "true",
+                                            "source_ip_is_private": address.lower()
+                                            == "true",
                                         }
                                         if sub_pattern == "SOURCE-IP-IS-PRIVATE"
                                         else {}
@@ -709,17 +789,29 @@ def compose_singbox_json(frame: pl.DataFrame, cidrs: list[str]) -> dict[str, Any
                             logical_rules.append(logical_rule)
 
     if cidrs:
-        regular_rule.setdefault("ip_cidr", []).extend(normalize_cidr(item) for item in cidrs)
+        regular_rule.setdefault("ip_cidr", []).extend(
+            normalize_cidr(item) for item in cidrs
+        )
 
     regular_rule = {
-        key: (sorted(set(value)) if key in {"port", "source_port"} else list(dict.fromkeys(value)))
+        key: (
+            sorted(set(value))
+            if key in {"port", "source_port"}
+            else list(dict.fromkeys(value))
+        )
         for key, value in regular_rule.items()
         if isinstance(value, list)
     }
 
-    ordered_regular = {field: regular_rule[field] for field in SINGBOX_ORDER if regular_rule.get(field)}
+    ordered_regular = {
+        field: regular_rule[field] for field in SINGBOX_ORDER if regular_rule.get(field)
+    }
     ordered_regular.update(
-        {field: value for field, value in regular_rule.items() if field not in ordered_regular and value},
+        {
+            field: value
+            for field, value in regular_rule.items()
+            if field not in ordered_regular and value
+        },
     )
 
     final_rules = logical_rules + ([ordered_regular] if ordered_regular else [])
@@ -737,7 +829,9 @@ def compose_mihomo_yaml(  # noqa: C901, D103, PLR0912, PLR0915
         if not addresses:
             return [], []
 
-        port_results = [(split_port(item)[0], split_port(item)[1]) for item in addresses]
+        port_results = [
+            (split_port(item)[0], split_port(item)[1]) for item in addresses
+        ]
         filtered_results = [
             (None, span) if span is not None else (value, None)
             for span, value in port_results
@@ -767,17 +861,25 @@ def compose_mihomo_yaml(  # noqa: C901, D103, PLR0912, PLR0915
                 payload.extend([f"DOMAIN-KEYWORD,{addr}" for addr in addresses])
             case "DOMAIN-REGEX":
                 payload.extend(
-                    [f"DOMAIN-REGEX,{addr}" for addr in addresses if validate_regex(addr)],
+                    [
+                        f"DOMAIN-REGEX,{addr}"
+                        for addr in addresses
+                        if validate_regex(addr)
+                    ],
                 )
             case "DOMAIN-WILDCARD":
                 payload.extend([f"DOMAIN-WILDCARD,{addr}" for addr in addresses])
             case "GEOSITE":
                 payload.extend([f"GEOSITE,{addr}" for addr in addresses])
             case "IP-CIDR":
-                if category == "ip" and ("china-ip" in filename or "china-ip-ipv6" in filename):
+                if category == "ip" and (
+                    "china-ip" in filename or "china-ip-ipv6" in filename
+                ):
                     payload.extend(
                         normalize_cidr(
-                            addr.removesuffix(",no-resolve") if addr.endswith(",no-resolve") else addr,
+                            addr.removesuffix(",no-resolve")
+                            if addr.endswith(",no-resolve")
+                            else addr,
                         )
                         for addr in addresses
                     )
@@ -825,7 +927,11 @@ def compose_mihomo_yaml(  # noqa: C901, D103, PLR0912, PLR0915
             case "PROCESS-PATH":
                 payload.extend([f"PROCESS-PATH,{addr}" for addr in addresses])
             case "NETWORK":
-                proto = [entry.upper() for entry in addresses if entry.upper() in {"TCP", "UDP", "ICMP"}]
+                proto = [
+                    entry.upper()
+                    for entry in addresses
+                    if entry.upper() in {"TCP", "UDP", "ICMP"}
+                ]
                 if proto:
                     payload.extend([f"NETWORK,{p}" for p in proto])
             case "IN-TYPE":
@@ -836,11 +942,19 @@ def compose_mihomo_yaml(  # noqa: C901, D103, PLR0912, PLR0915
                 payload.extend([f"IN-NAME,{addr}" for addr in addresses])
             case "PROCESS-NAME-REGEX":
                 payload.extend(
-                    [f"PROCESS-NAME-REGEX,{addr}" for addr in addresses if validate_regex(addr)],
+                    [
+                        f"PROCESS-NAME-REGEX,{addr}"
+                        for addr in addresses
+                        if validate_regex(addr)
+                    ],
                 )
             case "PROCESS-PATH-REGEX":
                 payload.extend(
-                    [f"PROCESS-PATH-REGEX,{addr}" for addr in addresses if validate_regex(addr)],
+                    [
+                        f"PROCESS-PATH-REGEX,{addr}"
+                        for addr in addresses
+                        if validate_regex(addr)
+                    ],
                 )
             case "UID":
                 payload.extend([f"UID,{addr}" for addr in addresses])
@@ -853,15 +967,25 @@ def compose_mihomo_yaml(  # noqa: C901, D103, PLR0912, PLR0915
                     if addr and not addr.startswith("(("):
                         parts = addr.split(",", 1)
                         if len(parts) == 2:  # noqa: PLR2004
-                            mapped_pattern = MIHOMO_ALIAS.get(parts[0].strip(), parts[0].strip())
-                            payload.extend([f"{pattern},{mapped_pattern},{parts[1].strip()}"])
+                            mapped_pattern = MIHOMO_ALIAS.get(
+                                parts[0].strip(), parts[0].strip()
+                            )
+                            payload.extend(
+                                [f"{pattern},{mapped_pattern},{parts[1].strip()}"]
+                            )
                         else:
                             payload.extend([f"{pattern},{addr.strip()}"])
                     else:
                         processed_addr = addr
                         for original, mapped in MIHOMO_ALIAS.items():
-                            processed_addr = processed_addr.replace(f"({original},", f"({mapped},")
-                        payload.extend([f"{pattern},{processed_addr.strip() if processed_addr else ''}"])
+                            processed_addr = processed_addr.replace(
+                                f"({original},", f"({mapped},"
+                            )
+                        payload.extend(
+                            [
+                                f"{pattern},{processed_addr.strip() if processed_addr else ''}"
+                            ]
+                        )
             case "MATCH":
                 payload.extend([f"MATCH,{addr}" for addr in addresses])
 
@@ -886,7 +1010,9 @@ def compose_mihomo_text(  # noqa: C901, D103, PLR0912, PLR0915
         if not addresses:
             return [], []
 
-        port_results = [(split_port(item)[0], split_port(item)[1]) for item in addresses]
+        port_results = [
+            (split_port(item)[0], split_port(item)[1]) for item in addresses
+        ]
         filtered_results = [
             (None, span) if span is not None else (value, None)
             for span, value in port_results
@@ -943,10 +1069,14 @@ def compose_mihomo_text(  # noqa: C901, D103, PLR0912, PLR0915
                 case "GEOSITE":
                     rules.extend([f"GEOSITE,{addr}" for addr in addresses])
                 case "IP-CIDR":
-                    if category == "ip" and ("china-ip" in filename or "china-ip-ipv6" in filename):
+                    if category == "ip" and (
+                        "china-ip" in filename or "china-ip-ipv6" in filename
+                    ):
                         rules.extend(
                             normalize_cidr(
-                                addr.removesuffix(",no-resolve") if addr.endswith(",no-resolve") else addr,
+                                addr.removesuffix(",no-resolve")
+                                if addr.endswith(",no-resolve")
+                                else addr,
                             )
                             for addr in addresses
                         )
@@ -994,7 +1124,11 @@ def compose_mihomo_text(  # noqa: C901, D103, PLR0912, PLR0915
                 case "PROCESS-PATH":
                     rules.extend([f"PROCESS-PATH,{addr}" for addr in addresses])
                 case "NETWORK":
-                    proto = [entry.upper() for entry in addresses if entry.upper() in {"TCP", "UDP", "ICMP"}]
+                    proto = [
+                        entry.upper()
+                        for entry in addresses
+                        if entry.upper() in {"TCP", "UDP", "ICMP"}
+                    ]
                     if proto:
                         rules.extend([f"NETWORK,{p}" for p in proto])
                 case "IN-TYPE":
@@ -1026,20 +1160,32 @@ def compose_mihomo_text(  # noqa: C901, D103, PLR0912, PLR0915
                         if addr and not addr.startswith("(("):
                             parts = addr.split(",", 1)
                             if len(parts) == 2:  # noqa: PLR2004
-                                mapped_pattern = MIHOMO_ALIAS.get(parts[0].strip(), parts[0].strip())
-                                rules.extend([f"{pattern},{mapped_pattern},{parts[1].strip()}"])
+                                mapped_pattern = MIHOMO_ALIAS.get(
+                                    parts[0].strip(), parts[0].strip()
+                                )
+                                rules.extend(
+                                    [f"{pattern},{mapped_pattern},{parts[1].strip()}"]
+                                )
                             else:
                                 rules.extend([f"{pattern},{addr.strip()}"])
                         else:
                             processed_addr = addr
                             for original, mapped in MIHOMO_ALIAS.items():
-                                processed_addr = processed_addr.replace(f"({original},", f"({mapped},")
-                            rules.extend([f"{pattern},{processed_addr.strip() if processed_addr else ''}"])
+                                processed_addr = processed_addr.replace(
+                                    f"({original},", f"({mapped},"
+                                )
+                            rules.extend(
+                                [
+                                    f"{pattern},{processed_addr.strip() if processed_addr else ''}"
+                                ]
+                            )
                 case "MATCH":
                     rules.extend([f"MATCH,{addr}" for addr in addresses])
 
         if cidrs:
-            if category == "ip" and ("china-ip" in filename or "china-ip-ipv6" in filename):
+            if category == "ip" and (
+                "china-ip" in filename or "china-ip-ipv6" in filename
+            ):
                 rules.extend([normalize_cidr(addr) for addr in cidrs])
             else:
                 ip_rules = [f"IP-CIDR,{normalize_cidr(addr)}" for addr in cidrs]
