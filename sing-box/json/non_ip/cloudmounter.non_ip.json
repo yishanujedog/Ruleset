@@ -7,162 +7,607 @@
       "rules": [
         {
           "domain_suffix": [
-            "sharepoint.com),(PROCESS-NAME,*CloudMounter"
+            "sharepoint.com"
           ]
         },
         {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "sharepoint.com),(SRC-IP,10.0.0.0/8"
+            "sharepoint.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "sharepoint.com),(SRC-IP,172.16.0.0/12"
+            "sharepoint.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "sharepoint.com),(SRC-IP,192.168.0.0/16"
+            "sharepoint.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "graph.microsoft.com),(PROCESS-NAME,*CloudMounter"
+            "graph.microsoft.com"
           ]
         },
         {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "graph.microsoft.com),(SRC-IP,10.0.0.0/8"
+            "graph.microsoft.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "graph.microsoft.com),(SRC-IP,172.16.0.0/12"
+            "graph.microsoft.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "graph.microsoft.com),(SRC-IP,192.168.0.0/16"
+            "graph.microsoft.com"
           ]
         },
+        {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "www.googleapis.com),(PROCESS-NAME,*CloudMounter"
+            "www.googleapis.com"
           ]
         },
+        {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "www.googleapis.com),(SRC-IP,10.0.0.0/8"
+            "www.googleapis.com"
           ]
         },
+        {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "www.googleapis.com),(SRC-IP,172.16.0.0/12"
+            "www.googleapis.com"
           ]
         },
+        {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "www.googleapis.com),(SRC-IP,192.168.0.0/16"
+            "www.googleapis.com"
           ]
         },
+        {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "api.onedrive.com),(PROCESS-NAME,*CloudMounter"
+            "api.onedrive.com"
           ]
         },
+        {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "api.onedrive.com),(SRC-IP,10.0.0.0/8"
+            "api.onedrive.com"
           ]
         },
+        {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "api.onedrive.com),(SRC-IP,172.16.0.0/12"
+            "api.onedrive.com"
           ]
         },
+        {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
         {
           "domain": [
-            "api.onedrive.com),(SRC-IP,192.168.0.0/16"
+            "api.onedrive.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "storage.live.com),(PROCESS-NAME,*CloudMounter"
+            "storage.live.com"
           ]
         },
         {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "storage.live.com),(SRC-IP,10.0.0.0/8"
+            "storage.live.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "storage.live.com),(SRC-IP,172.16.0.0/12"
+            "storage.live.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "storage.live.com),(SRC-IP,192.168.0.0/16"
+            "storage.live.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "files.1drv.com),(PROCESS-NAME,*CloudMounter"
+            "files.1drv.com"
           ]
         },
         {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "files.1drv.com),(SRC-IP,10.0.0.0/8"
+            "files.1drv.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "files.1drv.com),(SRC-IP,172.16.0.0/12"
+            "files.1drv.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "files.1drv.com),(SRC-IP,192.168.0.0/16"
+            "files.1drv.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "my.microsoftpersonalcontent.com),(PROCESS-NAME,*CloudMounter"
+            "my.microsoftpersonalcontent.com"
           ]
         },
         {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "my.microsoftpersonalcontent.com),(SRC-IP,10.0.0.0/8"
+            "my.microsoftpersonalcontent.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "my.microsoftpersonalcontent.com),(SRC-IP,172.16.0.0/12"
+            "my.microsoftpersonalcontent.com"
           ]
         },
         {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "my.microsoftpersonalcontent.com),(SRC-IP,192.168.0.0/16"
+            "my.microsoftpersonalcontent.com"
           ]
         },
         {
-          "domain_suffix": [
-            "upload.box.com),(PROCESS-NAME,*CloudMounter"
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_regex": [
+            "^[\\w.-]*?-medi[\\w.-]*?\\.svc\\.ms$"
           ]
         },
         {
-          "domain_suffix": [
-            "upload.box.com),(SRC-IP,10.0.0.0/8"
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_regex": [
+            "^[\\w.-]*?-medi[\\w.-]*?\\.svc\\.ms$"
           ]
         },
         {
-          "domain_suffix": [
-            "upload.box.com),(SRC-IP,172.16.0.0/12"
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_regex": [
+            "^[\\w.-]*?-medi[\\w.-]*?\\.svc\\.ms$"
           ]
         },
         {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_regex": [
+            "^[\\w.-]*?-medi[\\w.-]*?\\.svc\\.ms$"
+          ]
+        },
+        {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
           "domain_suffix": [
-            "upload.box.com),(SRC-IP,192.168.0.0/16"
+            "upload.box.com"
+          ]
+        },
+        {
+          "process_name": [
+            "*CloudMounter"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_suffix": [
+            "upload.box.com"
+          ]
+        },
+        {
+          "source_ip_cidr": [
+            "10.0.0.0/8"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_suffix": [
+            "upload.box.com"
+          ]
+        },
+        {
+          "source_ip_cidr": [
+            "172.16.0.0/12"
+          ]
+        }
+      ],
+      "invert": false
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_suffix": [
+            "upload.box.com"
+          ]
+        },
+        {
+          "source_ip_cidr": [
+            "192.168.0.0/16"
           ]
         }
       ],
