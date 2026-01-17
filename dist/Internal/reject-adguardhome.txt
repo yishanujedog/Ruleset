@@ -1,5 +1,5 @@
 ! Title: Sukka's Ruleset - AdGuardHome Blocklist
-! Last modified: Sat, 17 Jan 2026 03:57:34 GMT
+! Last modified: Sat, 17 Jan 2026 05:31:49 GMT
 ! Expires: 6 hours
 ! License: https://github.com/SukkaW/Surge/blob/master/LICENSE
 ! Homepage: https://github.com/SukkaW/Surge
@@ -395,6 +395,7 @@
 ||kjhyxdphquxwd.website^
 ||kduyukupdnikp.website^
 ||kdhwaqcwpqvwo.website^
+||kbwecmmmmbldm.website^
 ||kblzmuvgszdjs.website^
 ||jzuybtybvjcgm.website^
 ||jzruvlfvoawfg.website^
@@ -1188,6 +1189,7 @@
 ||iggirhjyojkqw.online^
 ||iforcircles-1.online^
 ||ifcartbwtzzwb.online^
+||ieladhfhoiclv.online^
 ||ieeucpssxsepw.online^
 ||iccihomoulkrg.online^
 ||iaizfouxosyvz.online^
@@ -1203,6 +1205,7 @@
 ||hrihqgbkuarzq.online^
 ||hpjdwjldynrfm.online^
 ||hpfmxeuubzdcb.online^
+||honeeaafcmjyp.online^
 ||hnvhpxetfugpx.online^
 ||hmthcqphqwppf.online^
 ||hhtteocvkxvph.online^
@@ -3460,6 +3463,7 @@
 ||cwvueoaakybnr.site^
 ||ctwcanlknfuoz.site^
 ||ctdowlapwyuwq.site^
+||csjdhxlelvqpa.site^
 ||ssact.cryptosignals.site^
 ||cryptobrowser.site^
 ||gtm.criativadecor.site^
@@ -5850,6 +5854,7 @@
 ||clyerteaeygoofs.cyou^
 ||brasenughsictic.cyou^
 ||birthedabbagang.cyou^
+||bewrapbarriosza.cyou^
 ||awdcoaledlowder.cyou^
 ||alliscuvetteray.cyou^
 ||1qbwtnpx566y4gb.cyou^
@@ -6845,6 +6850,7 @@
 ||kngdkfvrx.xyz^
 ||jtiasfkkg.xyz^
 ||tracker.jkstremum.xyz^
+||jfcwtkjxg.xyz^
 ||iroatfasq.xyz^
 ||inacgrgpb.xyz^
 ||stats.ignatuque.xyz^
@@ -8338,6 +8344,7 @@
 ||average-driver.pro^
 ||wasteful-read.pro^
 ||vivacioustone.pro^
+||valuable-race.pro^
 ||upright-group.pro^
 ||unusedgarbage.pro^
 ||unselfishwave.pro^
@@ -26719,6 +26726,7 @@
 ||t.miamiredhawks.com^
 ||links.mezurashigame.com^
 ||info.meyerandassoc.com^
+||mexicalsubsea.com^
 ||booking.metrostarlimo.com^
 ||sc.metrics-shell.com^
 ||gtm.metodoraizana.com^
@@ -27085,6 +27093,7 @@
 ||trc.hyperxgadgets.com^
 ||hxithjdtkguge.com^
 ||husbandnights.com^
+||hunchescatted.com^
 ||humpdecompose.com^
 ||obrqts.hudforeclosed.com^
 ||htkvyhghkgegm.com^
@@ -34231,6 +34240,7 @@
 ||load.hxvksgwv.luggagehero.com^
 ||stratum-eu.doge.luckyminers.com^
 ||luckyforbet.com^
+||lrkqwwfqupv.com^
 ||lqekosfpfmt.com^
 ||pop.lovingsiren.com^
 ||loverevenue.com^
@@ -39001,6 +39011,7 @@
 ||jybsb9oyss.com^
 ||jwhintmzfv.com^
 ||jvmevgutwg.com^
+||jutchoufos.com^
 ||justlagoon.com^
 ||justconfig.com^
 ||s.justblinds.com^
@@ -47180,6 +47191,7 @@
 ||6m8tk53pw.com^
 ||6jyi7mzae.com^
 ||6jei0t6xp.com^
+||6cmxoje5k.com^
 ||68tkaiaji.com^
 ||68td4yete.com^
 ||68s4eyiru.com^
@@ -48812,6 +48824,7 @@
 ||app.primexbt.com^
 ||analytics.primadog.com^
 ||pri12mel.com^
+||prfcwhxl.com^
 ||pressize.com^
 ||westevents.presidio.com^
 ||load.sst.presapan.com^
@@ -65054,6 +65067,7 @@
 ||em71xg8mx5cl63oq8bczn39l6j1kw321.cfd^
 ||tmxnqc5pikfuh2ut411cc784jqm4o7x.cfd^
 ||ryhkfuhxqbq8n27ix5wlwpm53n2jmt7.cfd^
+||pzcr76heplutyrhokmjgw2ukcu6jhqq.cfd^
 ||kmvmp3lnkju1czwpoh276e1u3pjkh3.cfd^
 ||hviegjv2vm8jozli2qkuw5x2gcpchh.cfd^
 ||hj5zf1wc9l2ztyuf3hmqmn8et5ev1u.cfd^
