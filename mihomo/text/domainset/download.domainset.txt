@@ -32,7 +32,6 @@
 +.s3-website.fr-par.scw.cloud
 +.s3.fr-par.scw.cloud
 +.cdn-builds.paw.cloud
-+.mirror.0-1.cloud
 +.repo.sleeping.town
 +.mirror.globo.tech
 +.centos-stream.ip-connect.info
@@ -280,7 +279,6 @@
 +.mirror.steadfast.net
 +.mirrors.spacedump.net
 +.mirror.shastacoe.net
-+.ubuntu.pishgaman.net
 +.mirror.ossplanet.net
 +.mirror.fi.ossplanet.net
 +.mirror.eu.ossplanet.net
@@ -381,7 +379,6 @@
 +.mirror.as43289.net
 +.mirror.as35701.net
 +.mirror.as29550.net
-+.mirror.as24220.net
 +.download.amelabs.net
 +.mirror.alwyzon.net
 +.mirrors.zagrio.net
@@ -656,7 +653,6 @@
 +.delivery.mp.microsoft.com
 +.mirrors.liquidweb.com
 +.packages.linuxmint.com
-+.ubuntu-mirror.kimiahost.com
 +.download-cdn.jetbrains.com
 +.download.jetbrains.com
 +.cdn.hyperbeam.com
@@ -1087,7 +1083,6 @@
 +.mirror.coganng.com
 +.mirror.bacloud.com
 +.download.anydesk.com
-+.mirror.aminidc.com
 +.mirror.alastyr.com
 +.static.adguard.com
 +.pkg.adfinis.com
@@ -1243,7 +1238,6 @@
 +.anorien.csc.warwick.ac.uk
 +.mirror.ox.ac.uk
 +.mirror.renu.ac.ug
-+.mirror.ucu.ac.ug
 +.ubuntu.org.ua
 +.ftp.gnu.org.ua
 +.alpha-gnu-org.ip-connect.vn.ua
@@ -1501,9 +1495,6 @@
 +.ubuntu.petiak.ir
 +.debian.petiak.ir
 +.mirror.kernel.ir
-+.ctan.yazd.ac.ir
-+.repo.iut.ac.ir
-+.ctan.um.ac.ir
 +.download.projectbluefin.io
 +.go.opentelemetry.io
 +.packagecloud.io
@@ -1792,7 +1783,6 @@
 +.mirror.dsrg.utoronto.ca
 +.mirror.cpsc.ucalgary.ca
 +.download.mersenne.ca
-+.mirrors.switch.ca
 +.mirror.estone.ca
 +.mirror.rafal.ca
 +.muug.ca

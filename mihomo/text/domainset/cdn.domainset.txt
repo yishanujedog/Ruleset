@@ -33,7 +33,6 @@
 +.picsum.photos
 +.files.mastodon.online
 +.am-cdn.online
-+.cdn.glitch.global
 +.code.iconify.design
 +.api.iconify.design
 +.ant.design
@@ -977,9 +976,8 @@
 +.static.planetminecraft.com
 +.pipedriveassets.com
 +.openseauserdata.com
-+.gt1.onlyhentaistuff.com
 +.fs2.onlyhentaistuff.com
-+.cdn.onlyhentaistuff.com
++.ca1.onlyhentaistuff.com
 +.cdn.northropgrumman.com
 +.irp-cdn.multiscreensite.com
 +.msftconnecttest.com
@@ -2023,7 +2021,6 @@
 +.pm1.aninoapps.com
 +.pa1.aninoapps.com
 +.images.anandtech.com
-+.cm1.aminoapps.com
 +.ip-ranges.amazonaws.com
 +.assets.as2.amazonaws.com
 +.abcnewsfe.com
@@ -2458,6 +2455,7 @@
 +.cdn-rdstaticassets.readdle.com
 +.ravenjs.com
 +.static.rakuten.com
++.devicons.railway.com
 +.rackcdn.com
 +.cdn.quadpay.com
 +.pxlecdn.com
@@ -2543,6 +2541,7 @@
 +.aurora-customization-usw2.lithium.com
 +.kym-cdn.com
 +.static-forms.klaviyo.com
++.static-app.klaviyo.com
 +.static.klaviyo.com
 +.a.klaviyo.com
 +.cdnsecakmi.kaltura.com
@@ -2978,8 +2977,6 @@
 +.crashlytics2.l.google.com
 +.s3.go2778.com
 +.static.gmgard.com
-+.content.product.glitch.com
-+.cdn.glitch.com
 +.glbimg.com
 +.tuf-repo.github.com
 +.raw.github.com
@@ -3702,7 +3699,6 @@
 +.cf.javfree.me
 +.circle-flags.zeljko.me
 +.cdn.picrew.me
-+.cdn.glitch.me
 +.static.start.me
 +.f.start.me
 +.c.start.me
@@ -3885,7 +3881,6 @@
 +.ipfs.filebase.io
 +.ipfs.denarius.io
 +.rum.cronitor.io
-+.cdn.commento.io
 +.cloudimg.io
 +.static.assetlab.io
 +.code.upscope.io
@@ -4127,6 +4122,7 @@
 +.previews.fleek.co
 +.ipfs.fleek.co
 +.load.csell.co
++.cdn.chord.co
 +.log-collector.17app.co
 +.webcdn.17app.co
 +.cdn.17app.co

@@ -56,7 +56,6 @@ DOMAIN-SUFFIX,home.arpa
 DOMAIN-SUFFIX,blutopia.xyz
 DOMAIN-SUFFIX,hd4.xyz
 DOMAIN-SUFFIX,hdpost.top
-DOMAIN-SUFFIX,acg.rip
 DOMAIN-SUFFIX,osapublishing.org
 DOMAIN-SUFFIX,sciencemag.org
 DOMAIN-SUFFIX,icetorrent.org

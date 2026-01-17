@@ -23,7 +23,6 @@ payload:
   - mirror.za.abantu.cloud
   - mirrors.ubuntu.dimit.cloud
   - cdn-builds.paw.cloud
-  - mirror.0-1.cloud
   - repo.sleeping.town
   - centos-stream.ip-connect.info
   - gimp.ip-connect.info
@@ -235,7 +234,6 @@ payload:
   - mirror.webtastix.net
   - ftp.ubuntu-tw.net
   - mirror.steadfast.net
-  - ubuntu.pishgaman.net
   - mirror.ossplanet.net
   - mirror.fi.ossplanet.net
   - mirror.eu.ossplanet.net
@@ -318,7 +316,6 @@ payload:
   - mirror.as43289.net
   - mirror.as35701.net
   - mirror.as29550.net
-  - mirror.as24220.net
   - download.amelabs.net
   - mirror.alwyzon.net
   - mirror.xenyth.net
@@ -548,7 +545,6 @@ payload:
   - msdl.microsoft.com
   - mirrors.liquidweb.com
   - packages.linuxmint.com
-  - ubuntu-mirror.kimiahost.com
   - download-cdn.jetbrains.com
   - download.jetbrains.com
   - cdn.hyperbeam.com
@@ -642,7 +638,6 @@ payload:
   - dl.devmate.com
   - mirror.bacloud.com
   - download.anydesk.com
-  - mirror.aminidc.com
   - mirror.alastyr.com
   - static.adguard.com
   - pkg.adfinis.com
@@ -775,7 +770,6 @@ payload:
   - anorien.csc.warwick.ac.uk
   - mirror.ox.ac.uk
   - mirror.renu.ac.ug
-  - mirror.ucu.ac.ug
   - ubuntu.org.ua
   - ftp.gnu.org.ua
   - alpha-gnu-org.ip-connect.vn.ua
@@ -1008,9 +1002,6 @@ payload:
   - repo.linuxmirrors.ir
   - mirror.arvancloud.ir
   - mirror.kernel.ir
-  - ctan.yazd.ac.ir
-  - repo.iut.ac.ir
-  - ctan.um.ac.ir
   - download.projectbluefin.io
   - go.opentelemetry.io
   - packagecloud.io
@@ -1283,7 +1274,6 @@ payload:
   - mirror.dsrg.utoronto.ca
   - mirror.cpsc.ucalgary.ca
   - download.mersenne.ca
-  - mirrors.switch.ca
   - mirror.estone.ca
   - muug.ca
   - ftp.muug.ca
