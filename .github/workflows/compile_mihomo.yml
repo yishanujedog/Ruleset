@@ -71,8 +71,7 @@ jobs:
         run: |
           ./srsc/srsc run -c srsc.json &
           sleep 5
-          curl -s http://127.0.0.1:8080/sing-box/domainset/reject/source || (exit 1)
-          curl -s http://127.0.0.1:8080/mihomo/domainset/reject/text || (exit 1)
+          curl -s http://127.0.0.1:8080/mihomo/ip/cdn/text || (exit 1)
       - shell: bash
         run: |
           mkdir -p mihomo/srsc/{text,yaml}/{domainset,ip,non_ip,dns}

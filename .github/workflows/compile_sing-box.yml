@@ -79,7 +79,7 @@ jobs:
         run: |
           ./srsc/srsc run -c srsc.json &
           sleep 5
-          curl -s http://127.0.0.1:8080/sing-box/domainset/reject/source || (exit 1)
+          curl -s http://127.0.0.1:8080/sing-box/ip/cdn/source || (exit 1)
       - shell: bash
         run: |
           mkdir -p sing-box/srsc/{source,binary}/{domainset,ip,non_ip,dns}
