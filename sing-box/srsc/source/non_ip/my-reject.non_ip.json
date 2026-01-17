@@ -42,6 +42,21 @@
     },
     {
       "process_name": "LemonService"
+    },
+    {
+      "port": 7680
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "domain_keyword": "genuine"
+        },
+        {
+          "domain_keyword": "autodesk"
+        }
+      ]
     }
   ]
 }
