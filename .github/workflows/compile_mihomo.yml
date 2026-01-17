@@ -26,9 +26,29 @@ jobs:
         run: |
           python -Im pip install --upgrade pip
           python -Im pip install --requirement requirements.txt
+      - uses: actions/setup-go@v6
+        with:
+          go-version: ^1.24
       - shell: bash
         run: |
           python main.py
+      - id: version
+        shell: bash
+        run: |
+          version=$(curl -sL https://api.github.com/repos/SagerNet/sing-box/releases | jq -r '.[0].tag_name[1:]')
+          echo "version=$version" >> $GITHUB_OUTPUT
+      - shell: bash
+        run: |
+          if [ ! -d "srsc" ]; then
+            git submodule add https://github.com/yishanujedog/sing-rule.git srsc
+          fi
+          git submodule update --init --recursive srsc
+          cd srsc
+          go clean -modcache
+          go get github.com/sagernet/sing-box@v${{ steps.version.outputs.version }}
+          go mod tidy
+          go build -o srsc ./cmd/srsc
+          cd ..
       - shell: bash
         run: |
           workdir="$(mktemp -d)"
@@ -47,7 +67,65 @@ jobs:
           gzip -d "$workdir/pkg.gz"
           chmod +x "$workdir/pkg"
           mv "$workdir/pkg" "$workdir/mihomo"
+      - shell: bash
+        run: |
+          ./srsc/srsc run -c srsc.json &
+          sleep 5
+          curl -s http://127.0.0.1:8080/sing-box/domainset/reject/source || (exit 1)
+          curl -s http://127.0.0.1:8080/mihomo/domainset/reject/text || (exit 1)
+      - shell: bash
+        run: |
+          mkdir -p mihomo/srsc/{text,yaml}/{domainset,ip,non_ip,dns}
+          mkdir -p mihomo/srsc/mrs/{domain,ipcidr}
 
+          for category in domainset; do
+            for file in dist/List/$category/*.conf; do
+              [ -f "$file" ] || continue
+              name="$(basename "$file" .conf | sed 's/_/-/g')"
+              api_name="$(echo "$name" | sed 's/-/_/g')"
+              curl -s "http://127.0.0.1:8080/mihomo/$category/$api_name/text" > "mihomo/srsc/text/$category/$name.$category.txt"
+              curl -s "http://127.0.0.1:8080/mihomo/$category/$api_name/yaml" > "mihomo/srsc/yaml/$category/$name.$category.yaml"
+              curl -s "http://127.0.0.1:8080/mihomo/$category/$api_name/mrs" > "mihomo/srsc/mrs/domain/$name.$category.mrs"
+            done
+          done
+
+          for file in dist/List/ip/*.conf; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file" .conf | sed 's/_/-/g')"
+            api_name="$(echo "$name" | sed 's/-/_/g')"
+            curl -s "http://127.0.0.1:8080/mihomo/ip/$api_name/text" > "mihomo/srsc/text/ip/$name.ip.txt"
+            curl -s "http://127.0.0.1:8080/mihomo/ip/$api_name/yaml" > "mihomo/srsc/yaml/ip/$name.ip.yaml"
+          done
+
+          for file in dist/List/ip/china_ip.conf dist/List/ip/china_ip_ipv6.conf; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file" .conf | sed 's/_/-/g')"
+            api_name="$(echo "$name" | sed 's/-/_/g')"
+            curl -s "http://127.0.0.1:8080/mihomo/ip/$api_name/mrs" > "mihomo/srsc/mrs/ipcidr/$name.ipcidr.mrs"
+          done
+
+          for category in non_ip; do
+            for file in dist/List/$category/*.conf; do
+              [ -f "$file" ] || continue
+              name="$(basename "$file" .conf | sed 's/_/-/g')"
+              api_name="$(echo "$name" | sed 's/-/_/g')"
+              curl -s "http://127.0.0.1:8080/mihomo/$category/$api_name/text" > "mihomo/srsc/text/$category/$name.$category.txt"
+              curl -s "http://127.0.0.1:8080/mihomo/$category/$api_name/yaml" > "mihomo/srsc/yaml/$category/$name.$category.yaml"
+            done
+          done
+
+          for file in dist/Modules/Rules/sukka_local_dns_mapping/*.conf; do
+            [ -f "$file" ] || continue
+            name="$(basename "$file" .conf | sed 's/_/-/g')"
+            api_name="$(echo "$name" | sed 's/-/_/g')"
+            curl -s "http://127.0.0.1:8080/mihomo/dns/$api_name/text" > "mihomo/srsc/text/dns/$name.dns.txt"
+            curl -s "http://127.0.0.1:8080/mihomo/dns/$api_name/yaml" > "mihomo/srsc/yaml/dns/$name.dns.yaml"
+          done
+      - shell: bash
+        run: |
+          pkill -f "srsc run" || true
+      - shell: bash
+        run: |
           cd mihomo
           shopt -s nullglob
 
@@ -92,8 +170,8 @@ jobs:
           fi
       - shell: bash
         run: |
-          if [[ -n "$(git status --porcelain mihomo/mrs)" ]]; then
-            git add mihomo/mrs mihomo/text mihomo/yaml
+          if [[ -n "$(git status --porcelain mihomo/mrs)" ]] || [[ -n "$(git status --porcelain mihomo/srsc)" ]]; then
+            git add mihomo/mrs mihomo/text mihomo/yaml mihomo/srsc
             git stash push --keep-index
             git commit -m "feat(mihomo): bump [$(date -u +%FT%TZ)]"
             git pull --rebase origin main

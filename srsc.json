@@ -5,113 +5,179 @@
   "listen": "127.0.0.1",
   "listen_port": 8080,
   "endpoints": {
-    "/Sukka/domainset/{name}/source": {
+    "/sing-box/domainset/{name}/source": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Clash/domainset/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/List/domainset/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "domain",
       "target_type": "source"
     },
-    "/Sukka/domainset/{name}/binary": {
+    "/sing-box/domainset/{name}/binary": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Clash/domainset/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/List/domainset/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "domain",
       "target_type": "binary"
     },
-    "/Sukka/ip/{name}/source": {
+    "/sing-box/ip/{name}/source": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Clash/ip/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/List/ip/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "classical",
       "target_type": "source"
     },
-    "/Sukka/ip/{name}/binary": {
+    "/sing-box/ip/{name}/binary": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Clash/ip/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/List/ip/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "classical",
       "target_type": "binary"
     },
-    "/Sukka/ip/china_ip/source": {
+    "/sing-box/non_ip/{name}/source": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Clash/ip/china_ip.txt",
-      "source_type": "clash",
-      "source_format": "text",
-      "source_behavior": "ipcidr",
-      "target_type": "source"
-    },
-    "/Sukka/ip/china_ip/binary": {
-      "type": "file",
-      "source": "local",
-      "path": "./dist/Clash/ip/china_ip.txt",
-      "source_type": "clash",
-      "source_format": "text",
-      "source_behavior": "ipcidr",
-      "target_type": "binary"
-    },
-    "/Sukka/ip/china_ip_ipv6/source": {
-      "type": "file",
-      "source": "local",
-      "path": "./dist/Clash/ip/china_ip_ipv6.txt",
-      "source_type": "clash",
-      "source_format": "text",
-      "source_behavior": "ipcidr",
-      "target_type": "source"
-    },
-    "/Sukka/ip/china_ip_ipv6/binary": {
-      "type": "file",
-      "source": "local",
-      "path": "./dist/Clash/ip/china_ip_ipv6.txt",
-      "source_type": "clash",
-      "source_format": "text",
-      "source_behavior": "ipcidr",
-      "target_type": "binary"
-    },
-    "/Sukka/non_ip/{name}/source": {
-      "type": "file",
-      "source": "local",
-      "path": "./dist/Clash/non_ip/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/List/non_ip/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "classical",
       "target_type": "source"
     },
-    "/Sukka/non_ip/{name}/binary": {
+    "/sing-box/non_ip/{name}/binary": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Clash/non_ip/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/List/non_ip/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "classical",
       "target_type": "binary"
     },
-    "/Sukka/dns/{name}/source": {
+    "/sing-box/dns/{name}/source": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Internal/mihomo_nameserver_policy/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/Modules/Rules/sukka_local_dns_mapping/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "classical",
       "target_type": "source"
     },
-    "/Sukka/dns/{name}/binary": {
+    "/sing-box/dns/{name}/binary": {
       "type": "file",
       "source": "local",
-      "path": "./dist/Internal/mihomo_nameserver_policy/{{ .name }}.txt",
-      "source_type": "clash",
-      "source_format": "text",
+      "path": "./dist/Modules/Rules/sukka_local_dns_mapping/{{ .name }}.conf",
+      "source_type": "surge",
       "source_behavior": "classical",
       "target_type": "binary"
+    },
+    "/mihomo/domainset/{name}/text": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/domainset/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "domain",
+      "target_type": "clash",
+      "target_format": "text",
+      "target_behavior": "domain"
+    },
+    "/mihomo/domainset/{name}/yaml": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/domainset/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "domain",
+      "target_type": "clash",
+      "target_format": "yaml",
+      "target_behavior": "domain"
+    },
+    "/mihomo/domainset/{name}/mrs": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/domainset/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "domain",
+      "target_type": "clash",
+      "target_format": "mrs",
+      "target_behavior": "domain"
+    },
+    "/mihomo/ip/{name}/text": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/ip/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "text",
+      "target_behavior": "classical"
+    },
+    "/mihomo/ip/{name}/yaml": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/ip/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "yaml",
+      "target_behavior": "classical"
+    },
+    "/mihomo/ip/china_ip/mrs": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/ip/china_ip.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "mrs",
+      "target_behavior": "ipcidr"
+    },
+    "/mihomo/ip/china_ip_ipv6/mrs": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/ip/china_ip_ipv6.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "mrs",
+      "target_behavior": "ipcidr"
+    },
+    "/mihomo/non_ip/{name}/text": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/non_ip/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "text",
+      "target_behavior": "classical"
+    },
+    "/mihomo/non_ip/{name}/yaml": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/List/non_ip/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "yaml",
+      "target_behavior": "classical"
+    },
+    "/mihomo/dns/{name}/text": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/Modules/Rules/sukka_local_dns_mapping/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "text",
+      "target_behavior": "classical"
+    },
+    "/mihomo/dns/{name}/yaml": {
+      "type": "file",
+      "source": "local",
+      "path": "./dist/Modules/Rules/sukka_local_dns_mapping/{{ .name }}.conf",
+      "source_type": "surge",
+      "source_behavior": "classical",
+      "target_type": "clash",
+      "target_format": "yaml",
+      "target_behavior": "classical"
     }
   },
   "resources": {}
