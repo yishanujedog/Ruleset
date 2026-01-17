@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - Reject Extra
-# Last Updated: 2026-01-17T05:31:41.616Z
-# Size: 78641
+# Last Updated: 2026-01-17T12:28:32.108Z
+# Size: 78660
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -1106,7 +1106,6 @@
 +.ofhzqxpfhusrw.website
 +.oeufihzttngjt.website
 +.oelhofejacqod.website
-+.oegjeeuyatxcm.website
 +.oebssdrcxhhyl.website
 +.odspjksksgqxx.website
 +.odqqtpfcatzbl.website
@@ -1732,6 +1731,7 @@
 +.hkzhevbvnykvf.website
 +.hkvneupkovlmr.website
 +.hkubluminqjxy.website
++.hksklwfpqhdmb.website
 +.hkgrrrscwssqq.website
 +.hjvjnpyhfzdws.website
 +.hjjugtkcrizxg.website
@@ -2126,6 +2126,7 @@
 +.dokkvnqunhiwt.website
 +.dohjxjjygwovt.website
 +.dociiopyfxovz.website
++.dnybzbcjbqizn.website
 +.dnurxagcqddad.website
 +.dnulgioljaump.website
 +.dntpsdnbfyrbl.website
@@ -4907,6 +4908,7 @@
 +.cxztgrpsubvkt.online
 +.cxyrrnttklcwq.online
 +.cxwwphrswjedj.online
++.cxpziqdjduwxm.online
 +.cxfbpspnezfak.online
 +.cxamupwxndqat.online
 +.cwvahnqeauemq.online
@@ -9121,6 +9123,7 @@
 +.cfoevzalcgvcc.space
 +.cenkvkaqcwxfw.space
 +.cejckggvflvnf.space
++.cdjeuxtnufsha.space
 +.ccluukrajdnyj.space
 +.ccktnecnlflta.space
 +.ccjfxvnyiqcfv.space
@@ -13090,6 +13093,7 @@
 +.febads.shop
 +.com-us.shop
 +.codb2b.shop
++.agl008.shop
 +.365bet.shop
 +.vn-tk.shop
 +.vn-lk.shop
@@ -16180,6 +16184,7 @@
 +.wpmskepfulscriver.cyou
 +.ruelygristyrutuli.cyou
 +.randyscovysnatchy.cyou
++.profitssulfowiner.cyou
 +.keenswaicurihalva.cyou
 +.kabobduetsgypsine.cyou
 +.coirtintingoathay.cyou
@@ -17794,6 +17799,7 @@
 +.xttdpwnnedxsacn.xyz
 +.w1nt3r155now1ng.xyz
 +.unixfilesystem2.xyz
++.tpuhcqfevsfqxyl.xyz
 +.thevanghanhphuc.xyz
 +.th3a115n3xtst3p.xyz
 +.track.sparta-tracking.xyz
@@ -20219,6 +20225,7 @@
 +.nocturnal-convert.pro
 +.niftydistribution.pro
 +.negligible-device.pro
++.miserlyphilosophy.pro
 +.luminousselection.pro
 +.limp-organization.pro
 +.internationalstop.pro
@@ -20326,6 +20333,7 @@
 +.wealthy-mixture.pro
 +.visiblepersonal.pro
 +.violet-attitude.pro
++.unwilling-cable.pro
 +.unimportantcell.pro
 +.unfinishedstudy.pro
 +.trustworthytalk.pro
@@ -38466,6 +38474,7 @@ fkp.samsungcloudsolution.com
 +.thoroughlybrain.com
 +.thorhortizinity.com
 +.thongtindonhang.com
++.thoatsizounseeh.com
 +.thirtydaychange.com
 +.thinnerlanguish.com
 +.thinkseducation.com
@@ -40865,6 +40874,7 @@ otn.samsungcloudcdn.com
 +.peasbishopgive.com
 +.peakperfomance.com
 +.pay-actualizar.com
++.pawntransgress.com
 +.pattycolourful.com
 +.patternsbyetsy.com
 +.pastecompetent.com
@@ -46149,7 +46159,6 @@ otn.samsungcloudcdn.com
 +.hugeadclicks.com
 +.https-icloud.com
 +.htliaproject.com
-+.hqngohicynxf.com
 +.oascentral.houstonpress.com
 +.hotsimulator.com
 +.hotroviet999.com
@@ -48773,6 +48782,7 @@ otn.samsungcloudcdn.com
 +.j3.jinghuaqitb.com
 +.j2.jinghuaqitb.com
 +.j1.jinghuaqitb.com
++.jilsotlsiph.com
 +.refer.jiffynewark.com
 +.jiankongbao.com
 +.ad.jetsoftware.com
@@ -49294,6 +49304,7 @@ otn.samsungcloudcdn.com
 +.easycounter.com
 +.easterfolks.com
 +.earthystick.com
++.earlierties.com
 +.eadexchange.com
 +.e-sacombank.com
 +.e-generator.com
@@ -50765,6 +50776,7 @@ gpm.samsungqbe.com
 +.cdn1.rmgserving.com
 +.ritzumafma.com
 +.riperemote.com
++.rinpkoatro.com
 +.rightstats.com
 +.ridgesdata.com
 +.rhombusads.com
@@ -52433,6 +52445,7 @@ gpm.samsungqbe.com
 +.consenttin.com
 +.rvw.connection.com
 +.connectbtc.com
++.condancing.com
 +.comstaples.com
 +.commastick.com
 +.commander1.com
@@ -54336,6 +54349,7 @@ gpm.samsungqbe.com
 +.topadperf.com
 +.top20free.com
 +.tomostake.com
++.tomharrph.com
 +.tomecards.com
 +.toknowall.com
 +.togerspas.com
@@ -55864,6 +55878,7 @@ samsungeurope.eu.qualtrics.com
 +.fondcycle.com
 +.traffic.focuusing.com
 +.focusdate.com
++.analytics.fmovies4u.com
 +.flypartly.com
 +.flourclaw.com
 +.flockpool.com
@@ -56903,6 +56918,7 @@ samsungeurope.eu.qualtrics.com
 +.web100kz.com
 +.web-stat.com
 +.web-bars.com
++.wdeynokr.com
 +.wbidder3.com
 +.wbidder2.com
 +.wazusoft.com
@@ -57102,6 +57118,7 @@ samsungeurope.eu.qualtrics.com
 +.gw.tushyraw.com
 +.turdgasm.com
 +.tumabeni.com
++.tuhszivw.com
 +.tugpoise.com
 +.tudaskor.com
 +.ga.tubepork.com
@@ -64024,6 +64041,7 @@ mpush-api.aliyun.com
 +.em8642.notifications.acorns.com
 +.achyxa.com
 +.acetrk.com
++.acebet.com
 +.accaii.com
 +.online.acbvnx.com
 +.abqjst.com
@@ -66122,6 +66140,7 @@ m.jr.mi.com
 +.iv3x9cqtgu4h1fhtoehomr578w8t124.cfd
 +.6x8rvifv7ehfhoe1qrphxeyh8wk4hkt.cfd
 +.zkvovu2lj97q8o7773gig8wluuttop.cfd
++.quilblb545nxqho8ku2bukuu3bh4i2.cfd
 +.l7bytxc77enewqrh59oy5igye6rui3.cfd
 +.cpnlqt7chij3no85ujmttpvlgjjecc.cfd
 +.bv967egpj6lb7p1ryrixkcpqkwryhy.cfd
